@@ -3,6 +3,12 @@ import os
 from discord.ext import commands
 from datetime import timedelta
 
+intents = discord.Intents.default()
+intents.message_content = True
+bot = commands.Bot(command_prefix="s!", intents=intents)
+
+LOGO = "https://cdn.discordapp.com/attachments/1505141118021402736/1505141380014669925/slaylabs_logo.png?ex=6a098ba5&is=6a083a25&hm=505739c1479f314292841763d680540f00f620b240287be5ded682828b27c438&"
+
 USDT_ADDRESS = os.environ.get("USDT_ADDRESS", "")
 USDT_ETH_ADDRESS = os.environ.get("USDT_ETH_ADDRESS", "")
 USDC_ETH_ADDRESS = os.environ.get("USDC_ETH_ADDRESS", "")
@@ -10,12 +16,6 @@ LTC_ADDRESS = os.environ.get("LTC_ADDRESS", "")
 BTC_ADDRESS = os.environ.get("BTC_ADDRESS", "")
 SOL_ADDRESS = os.environ.get("SOL_ADDRESS", "")
 ETH_ADDRESS = os.environ.get("ETH_ADDRESS", "")
-
-intents = discord.Intents.default()
-intents.message_content = True
-bot = commands.Bot(command_prefix="s!", intents=intents)
-
-LOGO = "https://cdn.discordapp.com/attachments/1505141118021402736/1505141380014669925/slaylabs_logo.png?ex=6a098ba5&is=6a083a25&hm=505739c1479f314292841763d680540f00f620b240287be5ded682828b27c438&"
 
 class TicketButton(discord.ui.View):
     def __init__(self):
