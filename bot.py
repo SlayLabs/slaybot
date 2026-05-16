@@ -45,7 +45,10 @@ class TicketButton(discord.ui.View):
         )
         embed.set_thumbnail(url=LOGO)
         embed.set_footer(text="SlayLabs", icon_url=LOGO)
-        await channel.send(embed=embed)
+        admin_role = discord.utils.get(guild.roles, name="Admin")
+        owner_role = discord.utils.get(guild.roles, name="Owner")
+        mentions = " ".join(r.mention for r in [admin_role, owner_role] if r)
+        await channel.send(f"{mentions}", embed=embed)
         await interaction.response.send_message(f"✅ Ticket created: {channel.mention}", ephemeral=True)
 
 
