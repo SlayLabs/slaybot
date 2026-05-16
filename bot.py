@@ -66,7 +66,7 @@ async def services(ctx):
         "🔹 Windows Tweak — $10\n"
         "🔹 Advanced — $25\n"
         "🔹 Ultimate — $30\n"
-        "🔹 BIOS Only — $15"
+        "🔹 BIOS Only (intel) — $15"
     ), inline=False)
     embed.add_field(name="ℹ️ How it works", value=(
         "1. Click Create Ticket below\n"
