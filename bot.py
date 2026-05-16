@@ -164,4 +164,10 @@ async def rules(ctx):
 async def timeout_error(ctx, error):
     await ctx.send("❌ You don't have permission to timeout members.")
 
+@bot.event
+async def on_member_join(member):
+    role = discord.utils.get(member.guild.roles, name="Member")
+    if role:
+        await member.add_roles(role)
+
 bot.run(os.environ["TOKEN"])
