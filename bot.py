@@ -188,4 +188,16 @@ async def on_member_join(member):
     if role:
         await member.add_roles(role)
 
+USDT_ADDRESS = os.environ.get("USDT_ADDRESS", "")
+
+@bot.command(name="usdt")
+async def usdt(ctx):
+    embed = discord.Embed(
+        title="💰 Payment — USDT (TRC-20)",
+        description=f"Send payment to the address below.\n\n`{USDT_ADDRESS}`\n\n⚠️ Make sure to use the **TRC-20** network or your funds will be lost.",
+        color=0x6A0DAD
+    )
+    embed.set_footer(text="SlayLabs", icon_url=LOGO)
+    await ctx.send(embed=embed)
+
 bot.run(os.environ["TOKEN"])
