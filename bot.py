@@ -5,7 +5,7 @@ from datetime import timedelta
 
 USDT_ADDRESS = os.environ.get("USDT_ADDRESS", "")
 USDT_ETH_ADDRESS = os.environ.get("USDT_ETH_ADDRESS", "")
-USDC_ADDRESS = os.environ.get("USDC_ADDRESS", "")
+USDC_ETH_ADDRESS = os.environ.get("USDC_ETH_ADDRESS", "")
 LTC_ADDRESS = os.environ.get("LTC_ADDRESS", "")
 BTC_ADDRESS = os.environ.get("BTC_ADDRESS", "")
 SOL_ADDRESS = os.environ.get("SOL_ADDRESS", "")
