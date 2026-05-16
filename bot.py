@@ -40,7 +40,7 @@ class TicketButton(discord.ui.View):
 
         embed = discord.Embed(
             title="🎫 Ticket Opened",
-            description=f"Welcome {user.mention}! Describe what you need and we'll get back to you.\n\nOur payment method is **PayPal**.\n\nUse `s!close` to close this ticket.",
+            description=f"Welcome {user.mention}! Describe what you need and we'll get back to you.\n\n💰 **Payment:** USDT (TRC-20)\n📋 **Address:** `YOUR_USDT_ADDRESS_HERE`\n\nUse `s!close` to close this ticket.",
             color=0x6A0DAD
         )
         embed.set_thumbnail(url=LOGO)
