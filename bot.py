@@ -104,6 +104,42 @@ async def timeout_user(ctx, user: discord.Member, minutes: int, *, reason: str =
     await user.timeout(duration, reason=reason)
     await ctx.send(f"✅ {user.mention} timed out for {minutes} minutes. Reason: {reason}")
 
+@bot.command(name="tos")
+async def tos(ctx):
+    embed = discord.Embed(
+        title="📋 SlayLabs — Terms of Service",
+        description="Hey! Before we get started, just a few things to keep in mind. Pretty standard stuff, won't take long 👇",
+        color=0x6A0DAD
+    )
+    embed.set_thumbnail(url=LOGO)
+    embed.add_field(name="💸 No Refunds", value="All sales are final. Once you've paid, we get to work — no refunds after that.", inline=False)
+    embed.add_field(name="⚖️ No Chargebacks", value="Please don't dispute payments. If something goes wrong, just talk to us — we'll sort it out. Chargebacks get you blacklisted permanently.", inline=False)
+    embed.add_field(name="🖥️ Results May Vary", value="We're optimizing your PC, not performing magic. Results depend on your hardware and setup — we'll always do our best though.", inline=False)
+    embed.add_field(name="⚠️ We're Not Liable", value="We're not responsible for any issues that come up after the service. Back up your data before we start — just to be safe.", inline=False)
+    embed.add_field(name="🔒 Keep It to Yourself", value="Our tweaks are for you only. Don't share, resell, or redistribute them. Not cool and could get you banned.", inline=False)
+    embed.add_field(name="✅ Just Be Honest", value="Make sure you own the payment method you're using. That's all we ask.", inline=False)
+    embed.add_field(name="👍 That's It!", value="By paying, you're agreeing to all of the above. If you've got questions, just ask us in a ticket before buying.", inline=False)
+    embed.set_footer(text="SlayLabs • We appreciate your trust 🙏", icon_url=LOGO)
+    await ctx.send(embed=embed)
+
+@bot.command(name="rules")
+async def rules(ctx):
+    embed = discord.Embed(
+        title="📋 Server Rules",
+        description="Keep it chill and we'll all have a good time. Just a few things to keep in mind 👇",
+        color=0x6A0DAD
+    )
+    embed.set_thumbnail(url=LOGO)
+    embed.add_field(name="1️⃣ Be Cool", value="Treat everyone with respect. No toxicity, hate speech, or drama. We're all here for the same thing.", inline=False)
+    embed.add_field(name="2️⃣ No Spam", value="Don't flood the chat with messages or random links. Keep it relevant.", inline=False)
+    embed.add_field(name="3️⃣ No Self-Promo", value="Don't advertise your own stuff here without asking staff first.", inline=False)
+    embed.add_field(name="4️⃣ Right Channels", value="Post in the right place. It keeps things clean for everyone.", inline=False)
+    embed.add_field(name="5️⃣ Follow Discord's Rules", value="Discord's ToS applies here too. Keep that in mind.", inline=False)
+    embed.add_field(name="6️⃣ No Scamming", value="Any scam attempts = instant ban. No exceptions.", inline=False)
+    embed.add_field(name="7️⃣ Stay on Topic", value="This server is about PC optimization. Keep convos related to that.", inline=False)
+    embed.set_footer(text="Break the rules and you're out. Simple 🤷 • SlayLabs", icon_url=LOGO)
+    await ctx.send(embed=embed)
+
 @timeout_user.error
 async def timeout_error(ctx, error):
     await ctx.send("❌ You don't have permission to timeout members.")
