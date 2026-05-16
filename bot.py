@@ -205,7 +205,7 @@ async def pay(ctx):
     )
     embed.add_field(name="USDT (TRC-20) ⭐ Recommended", value=f"`{USDT_ADDRESS}`", inline=False)
     embed.add_field(name="USDT (ETH Network)", value=f"`{USDT_ETH_ADDRESS}`", inline=False)
-    embed.add_field(name="USDC (ETH Network)", value=f"`{USDC_ADDRESS}`", inline=False)
+    embed.add_field(name="USDC (ETH Network)", value=f"`{USDC_ETH_ADDRESS}`", inline=False)
     embed.add_field(name="LTC — Litecoin", value=f"`{LTC_ADDRESS}`", inline=False)
     embed.add_field(name="BTC — Bitcoin", value=f"`{BTC_ADDRESS}`", inline=False)
     embed.add_field(name="SOL — Solana", value=f"`{SOL_ADDRESS}`", inline=False)
