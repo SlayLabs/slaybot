@@ -4,7 +4,7 @@ from discord.ext import commands
 from datetime import timedelta
 
 intents = discord.Intents.default()
-bot = commands.Bot(command_prefix="!", intents=intents)
+bot = commands.Bot(command_prefix="s!", intents=intents)
 
 @bot.event
 async def on_ready():
