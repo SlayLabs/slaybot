@@ -3,6 +3,14 @@ import os
 from discord.ext import commands
 from datetime import timedelta
 
+USDT_ADDRESS = os.environ.get("USDT_ADDRESS", "")
+USDT_ETH_ADDRESS = os.environ.get("USDT_ETH_ADDRESS", "")
+USDC_ADDRESS = os.environ.get("USDC_ADDRESS", "")
+LTC_ADDRESS = os.environ.get("LTC_ADDRESS", "")
+BTC_ADDRESS = os.environ.get("BTC_ADDRESS", "")
+SOL_ADDRESS = os.environ.get("SOL_ADDRESS", "")
+ETH_ADDRESS = os.environ.get("ETH_ADDRESS", "")
+
 intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="s!", intents=intents)
@@ -188,16 +196,21 @@ async def on_member_join(member):
     if role:
         await member.add_roles(role)
 
-USDT_ADDRESS = os.environ.get("USDT_ADDRESS", "")
-
-@bot.command(name="usdt")
-async def usdt(ctx):
+@bot.command(name="pay")
+async def pay(ctx):
     embed = discord.Embed(
-        title="💰 Payment — USDT (TRC-20)",
-        description=f"Send payment to the address below.\n\n`{USDT_ADDRESS}`\n\n⚠️ Make sure to use the **TRC-20** network or your funds will be lost.",
+        title="💰 Payment Methods — SlayLabs",
+        description="Send payment to any of the addresses below. Make sure to use the correct network!",
         color=0x6A0DAD
     )
-    embed.set_footer(text="SlayLabs", icon_url=LOGO)
+    embed.add_field(name="USDT (TRC-20) ⭐ Recommended", value=f"`{USDT_ADDRESS}`", inline=False)
+    embed.add_field(name="USDT (ETH Network)", value=f"`{USDT_ETH_ADDRESS}`", inline=False)
+    embed.add_field(name="USDC (ETH Network)", value=f"`{USDC_ADDRESS}`", inline=False)
+    embed.add_field(name="LTC — Litecoin", value=f"`{LTC_ADDRESS}`", inline=False)
+    embed.add_field(name="BTC — Bitcoin", value=f"`{BTC_ADDRESS}`", inline=False)
+    embed.add_field(name="SOL — Solana", value=f"`{SOL_ADDRESS}`", inline=False)
+    embed.add_field(name="ETH — Ethereum", value=f"`{ETH_ADDRESS}`", inline=False)
+    embed.set_footer(text="SlayLabs • After paying, send proof in this ticket.", icon_url=LOGO)
     await ctx.send(embed=embed)
 
 bot.run(os.environ["TOKEN"])
