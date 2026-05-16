@@ -122,6 +122,26 @@ async def tos(ctx):
     embed.set_footer(text="SlayLabs • We appreciate your trust 🙏", icon_url=LOGO)
     await ctx.send(embed=embed)
 
+@bot.command(name="paid")
+@commands.has_permissions(manage_roles=True)
+async def paid(ctx, user: discord.Member):
+    role = discord.utils.get(ctx.guild.roles, name="Customer")
+    if not role:
+        await ctx.send("❌ Customer role not found. Make sure it's named exactly `Customer`.")
+        return
+    await user.add_roles(role)
+    embed = discord.Embed(
+        title="✅ Payment Confirmed",
+        description=f"{user.mention} has been granted the **Customer** role. Welcome to SlayLabs!",
+        color=0x6A0DAD
+    )
+    embed.set_footer(text="SlayLabs", icon_url=LOGO)
+    await ctx.send(embed=embed)
+
+@paid.error
+async def paid_error(ctx, error):
+    await ctx.send("❌ You don't have permission to use this command.")
+
 @bot.command(name="rules")
 async def rules(ctx):
     embed = discord.Embed(
