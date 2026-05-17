@@ -78,7 +78,7 @@ async def services(ctx):
     embed.add_field(name="🔹 Windows Tweak — $20", value="• Custom OS installation\n• Full Windows optimization", inline=True)
     embed.add_field(name="🔹 Advanced — $25", value="• Everything in Windows Tweak\n• Gatekept delay optimization\n• Fortnite specific tuning", inline=True)
     embed.add_field(name="\u200b", value="\u200b", inline=True)
-    embed.add_field(name="🔹 Ultimate — $30", value="• Everything in Advanced\n• Full BIOS tuning", inline=True)
+    embed.add_field(name="🔹 Ultimate — $35", value="• Everything in Advanced\n• Full BIOS tuning (Intel)", inline=True)
     embed.add_field(name="\u200b", value="\u200b", inline=True)
     embed.add_field(name="\u200b", value="\u200b", inline=True)
     embed.add_field(name="⚠️ Requirements", value="• Read ToS before opening a ticket\n• Fresh Windows install preferred\n", inline=False)
