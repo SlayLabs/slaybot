@@ -67,26 +67,23 @@ async def on_ready():
 
 @bot.command(name="services")
 async def services(ctx):
+    await ctx.message.delete()
     embed = discord.Embed(
-        title="⚡ SlayLabs — PC Optimization",
-        description="Premium Windows tweaking and optimization services.\nClick the button below to open a ticket.",
+        title="⚡ SlayLabs — Packages",
+        description="Everything you need to get your PC running at full potential.",
         color=0x6A0DAD
     )
     embed.set_thumbnail(url=LOGO)
-    embed.add_field(name="📦 Packages", value=(
-        "🔹 Windows Tweak — $10\n"
-        "🔹 Advanced — $25\n"
-        "🔹 Ultimate — $30\n"
-        "🔹 BIOS Only (intel) — $15"
-    ), inline=False)
-    embed.add_field(name="ℹ️ How it works", value=(
-        "1. Click Create Ticket below\n"
-        "2. Pick your package\n"
-        "3. Send payment proof\n"
-        "4. We get started"
-    ), inline=False)
-    embed.add_field(name="⚠️ Important", value="Keep everything in one ticket. We will respond.", inline=False)
-    embed.set_footer(text="SlayLabs", icon_url=LOGO)
+    embed.add_field(name="🔹 BIOS Only — $15", value="• Full BIOS tuning & configuration", inline=True)
+    embed.add_field(name="🔹 Windows Tweak — $15", value="• Custom OS installation\n• Full Windows optimization", inline=True)
+    embed.add_field(name="🔹 Advanced — $25", value="• Everything in Windows Tweak\n• Gatekept delay optimization\n• Fortnite specific tuning", inline=True)
+    embed.add_field(name="\u200b", value="\u200b", inline=True)
+    embed.add_field(name="🔹 Ultimate — $30", value="• Everything in Advanced\n• Full BIOS tuning", inline=True)
+    embed.add_field(name="\u200b", value="\u200b", inline=True)
+    embed.add_field(name="\u200b", value="\u200b", inline=True)
+    embed.add_field(name="⚠️ Requirements", value="• Read ToS before opening a ticket\n• Fresh Windows install preferred\n• Must have a USB drive for OS installation", inline=False)
+    embed.add_field(name="ℹ️ How it works", value="1. Click Create Ticket below\n2. Pick your package\n3. Send payment proof\n4. We get started", inline=False)
+    embed.set_footer(text="SlayLabs • Open a ticket to get started", icon_url=LOGO)
     await ctx.send(embed=embed, view=TicketButton())
 
 @bot.command(name="close")
