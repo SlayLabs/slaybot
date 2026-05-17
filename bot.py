@@ -81,7 +81,7 @@ async def services(ctx):
     embed.add_field(name="🔹 Ultimate — $30", value="• Everything in Advanced\n• Full BIOS tuning", inline=True)
     embed.add_field(name="\u200b", value="\u200b", inline=True)
     embed.add_field(name="\u200b", value="\u200b", inline=True)
-    embed.add_field(name="⚠️ Requirements", value="• Read ToS before opening a ticket\n• Fresh Windows install preferred\n• Must have a USB drive for OS installation", inline=False)
+    embed.add_field(name="⚠️ Requirements", value="• Read ToS before opening a ticket\n• Fresh Windows install preferred\n", inline=False)
     embed.add_field(name="ℹ️ How it works", value="1. Click Create Ticket below\n2. Pick your package\n3. Send payment proof\n4. We get started", inline=False)
     embed.set_footer(text="SlayLabs • Open a ticket to get started", icon_url=LOGO)
     await ctx.send(embed=embed, view=TicketButton())
