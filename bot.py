@@ -3,7 +3,7 @@ import os
 from discord.ext import commands
 from datetime import timedelta
 
-intents = discord.Intents.default()
+intents = discord.Intents.all()
 intents.message_content = True
 bot = commands.Bot(command_prefix="s!", intents=intents)
 
