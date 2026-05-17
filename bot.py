@@ -74,7 +74,7 @@ async def services(ctx):
         color=0x6A0DAD
     )
     embed.set_thumbnail(url=LOGO)
-    embed.add_field(name="🔹 BIOS Only — $15", value="• Full BIOS tuning & configuration", inline=True)
+    embed.add_field(name="🔹 BIOS Only (Intel) — $15", value="• Full BIOS tuning & configuration", inline=True)
     embed.add_field(name="🔹 Windows Tweak — $20", value="• Custom OS installation\n• Full Windows optimization", inline=True)
     embed.add_field(name="🔹 Advanced — $25", value="• Everything in Windows Tweak\n• Gatekept delay optimization\n• Fortnite specific tuning", inline=True)
     embed.add_field(name="\u200b", value="\u200b", inline=True)
